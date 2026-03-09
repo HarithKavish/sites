@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Site Removal Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>GitHub Pages Site Removal Request</h1>
+            <p class="subtitle">Formal Process for Deleting a GitHub Pages Hosted Website</p>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <section class="intro-section">
+            <div class="container">
+                <h2>Introduction</h2>
+                <p>This page provides a structured guide for requesting the removal of a GitHub Pages-hosted website. Whether you're transitioning to a new platform, archiving a project, or simply no longer need the site, following these steps ensures a smooth process.</p>
+            </div>
+        </section>
+
+        <section class="steps-section">
+            <div class="container">
+                <h2>Steps to Remove a GitHub Pages Site</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <h3>1. Verify Repository Ownership</h3>
+                        <p>Ensure you have administrative access to the repository hosting the GitHub Pages site. If you don't, contact the repository maintainer to request permission.</p>
+                    </div>
+                    <div class="step-card">
+                        <h3>2. Check Repository Settings</h3>
+                        <p>Navigate to the repository settings in GitHub. Under the "Settings" tab, look for the "GitHub Pages" section. If the site is active, note the branch and folder configuration used for hosting.</p>
+                    </div>
+                    <div class="step-card">
+                        <h3>3. Disable GitHub Pages</h3>
+                        <p>Go to the "GitHub Pages" settings and disable the site. This prevents any further traffic but does not immediately delete the site content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <h2>Formal Removal Request Form</h2>
+                <form id="removal-form" class="removal-form">
+                    <div class="form-group">
+                        <label for="repository-name">Repository Name:</label>
+                        <input type="text" id="repository-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="github-username">GitHub Username:</label>
+                        <input type="text" id="github-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason for Removal:</label>
+                        <textarea id="reason" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Contact Email:</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Removal Request</button>
+                </form>
+                <div id="form-response" class="response-message hidden"></div>
+            </div>
+        </section>
+
+        <section class="documentation-section">
+            <div class="container">
+                <h2>Additional Documentation</h2>
+                <div class="documentation-grid">
+                    <div class="doc-card">
+                        <h3>GitHub Pages Documentation</h3>
+                        <p>For detailed information on GitHub Pages, visit the official documentation: <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages Documentation</a>.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h3>Repository Backup</h3>
+                        <p>Before proceeding with removal, consider backing up your repository content. You can export the repository using GitHub's export feature.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h3>Alternative Hosting Options</h3>
+                        <p>Explore other hosting options such as Vercel, Netlify, or traditional web hosting services if you wish to continue hosting your site.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 GitHub Pages Removal Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
