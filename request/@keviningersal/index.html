@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deploying and hosting a website requires careful planning to ensure performance, security, and accessibility. This guide covers essential steps for deploying a static or dynamic website using modern hosting solutions.">
+    <title>Deploying and Hosting a Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Deploy & Host Your Website</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hosting-options">Hosting Options</a></li>
+                    <li><a href="#static-vs-dynamic">Static vs. Dynamic</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#cost-analysis">Cost Considerations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <section id="hosting-options" class="section">
+            <h2>Hosting Options for Web Deployment</h2>
+            <div class="container">
+                <div class="hosting-card">
+                    <h3>Shared Hosting</h3>
+                    <p>Shared hosting is the most cost-effective solution for beginners and small websites. Multiple websites share a single server, making it ideal for low-traffic sites. Pros include low cost and ease of setup, while cons involve limited resources and potential performance issues under heavy load.</p>
+                </div>
+                <div class="hosting-card">
+                    <h3>VPS Hosting</h3>
+                    <p>Virtual Private Server (VPS) hosting offers dedicated resources within a virtualized environment. It’s suitable for growing websites needing more control and scalability. Pros include better performance and customization, but cons include higher costs and technical management requirements.</p>
+                </div>
+                <div class="hosting-card">
+                    <h3>Dedicated Hosting</h3>
+                    <p>Dedicated hosting provides an entire server dedicated to your website. It’s ideal for high-traffic sites requiring maximum performance and security. Pros include full control and reliability, but cons include high costs and complex setup.</p>
+                </div>
+                <div class="hosting-card">
+                    <h3>Cloud Hosting</h3>
+                    <p>Cloud hosting distributes resources across multiple servers, offering scalability and redundancy. Popular platforms like AWS, Google Cloud, and Azure provide flexibility for dynamic workloads. Pros include cost efficiency at scale and automatic updates, but cons include potential complexity in management.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="static-vs-dynamic" class="section">
+            <h2>Static vs. Dynamic Website Deployment</h2>
+            <div class="container">
+                <div class="comparison-card">
+                    <h3>Static Websites</h3>
+                    <p>Static websites use pre-rendered HTML, CSS, and JavaScript. They are lightweight, fast, and easy to deploy. Hosting options like GitHub Pages, Netlify, or Vercel are ideal for static sites. Deployment involves uploading files to a hosting provider.</p>
+                    <ul>
+                        <li>Best for: Blogs, portfolios, marketing sites</li>
+                        <li>Pros: Fast load times, low cost, easy maintenance</li>
+                        <li>Cons: Limited interactivity, no backend processing</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3>Dynamic Websites</h3>
+                    <p>Dynamic websites use backend technologies like PHP, Node.js, or Python to generate content on-the-fly. They require a hosting solution with database support (e.g., MySQL, PostgreSQL). Deployment involves setting up a server, configuring databases, and integrating with CMS platforms like WordPress.</p>
+                    <ul>
+                        <li>Best for: E-commerce, membership sites, complex applications</li>
+                        <li>Pros: Interactive features, user accounts, real-time updates</li>
+                        <li>Cons: Higher costs, more complex setup</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-practices" class="section">
+            <h2>Best Practices for Website Deployment</h2>
+            <div class="container">
+                <div class="practice-item">
+                    <h3>Optimize Performance</h3>
+                    <p>Use tools like Lighthouse in Chrome DevTools to audit performance. Optimize images, minify CSS/JS, and leverage browser caching. Implement lazy loading for offscreen images to improve load times.</p>
+                </div>
+                <div class="practice-item">
+                    <h3>Secure Your Deployment</h3>
+                    <p>Enable HTTPS using Let’s Encrypt certificates. Regularly update software to patch vulnerabilities. Use strong passwords and implement firewall rules to protect against DDoS attacks.</p>
+                </div>
+                <div class="practice-item">
+                    <h3>Monitor and Maintain</h3>
+                    <p>Set up monitoring tools like UptimeRobot or Pingdom to track server availability. Use version control (Git) to manage code changes and deploy updates systematically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cost-analysis" class="section">
+            <h2>Cost Analysis for Hosting Solutions</h2>
+            <div class="container">
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Hosting Type</th>
+                            <th>Cost Range (Monthly)</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shared Hosting</td>
+                            <td>$3–$15</td>
+                            <td>Small blogs, personal sites</td>
+                        </tr>
+                        <tr>
+                            <td>VPS Hosting</td>
+                            <td>$20–$100</td>
+                            <td>Growing websites, small businesses</td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated Hosting</td>
+                            <td>$100–$500+</td>
+                            <td>High-traffic sites, enterprise applications</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Hosting (AWS/GCP)</td>
+                            <td>$5–$500+ (pay-as-you-go)</td>
+                            <td>Scalable applications, dynamic sites</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Website Deployment Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
