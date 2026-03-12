@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harith's Sites</title>
+  <meta name="description" content="Collection of sites and demos by Harith Kavish" />
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, sans-serif; background:#0b0b10; color:#eaeaf2; margin:0; }
+    .wrap{max-width:960px;margin:48px auto;padding:24px}
+    h1{font-size:2rem}
+    a{color:#6c63ff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+    .card{background:#101016;padding:16px;border-radius:12px;border:1px solid #1f1f2a}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Harith's Sites</h1>
+    <p>Collection of sample sites and hosted projects. Visit any site in the list below.</p>
+
+    <div class="grid">
+      <div class="card"><strong>Jarvis Store</strong><div><a href="https://store.harithkavish.com">store.harithkavish.com</a></div></div>
+      <div class="card"><strong>Sites index</strong><div><a href="https://sites.harithkavish.com">sites.harithkavish.com</a></div></div>
+      <div class="card"><strong>Blog</strong><div><a href="https://blog.harithkavish.com">blog.harithkavish.com</a></div></div>
+    </div>
+
+    <p style="margin-top:24px;color:#9b9bb2">Last updated: <span id="ts"></span></p>
+  </div>
+<script>document.getElementById('ts').textContent=new Date().toISOString();</script>
+</body>
+</html>
