@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Composting Basics - A Beginner's Guide</title>
     <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-card: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-green: #66bb6a;
+            --accent-green-light: #81c784;
+            --accent-red: #ef5350;
+            --accent-red-light: #e57373;
+            --border-color: #333;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
         }
         header {
             text-align: center;
             margin-bottom: 40px;
             padding: 30px 0;
-            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-green-light));
             color: white;
             border-radius: 10px;
         }
@@ -32,16 +46,23 @@
             opacity: 0.9;
         }
         section {
-            background: white;
+            background: var(--bg-card);
             padding: 25px;
             margin-bottom: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            border: 1px solid var(--border-color);
         }
         h2 {
-            color: #2E7D32;
-            border-bottom: 2px solid #E8F5E9;
+            color: var(--accent-green);
+            border-bottom: 2px solid #2e7d32;
             padding-bottom: 10px;
+        }
+        h3 {
+            color: var(--text-primary);
+        }
+        p, li {
+            color: var(--text-secondary);
         }
         .benefits-grid {
             display: grid;
@@ -50,10 +71,10 @@
             margin-top: 20px;
         }
         .benefit-card {
-            background: #F1F8E9;
+            background: var(--bg-secondary);
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #4CAF50;
+            border-left: 4px solid var(--accent-green);
         }
         .do-dont {
             display: grid;
@@ -62,16 +83,16 @@
             margin-top: 20px;
         }
         .do {
-            background: #E8F5E9;
+            background: var(--bg-secondary);
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #4CAF50;
+            border-left: 4px solid var(--accent-green);
         }
         .dont {
-            background: #FFEBEE;
+            background: var(--bg-secondary);
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #F44336;
+            border-left: 4px solid var(--accent-red);
         }
         .steps {
             counter-reset: step-counter;
@@ -80,7 +101,7 @@
             counter-increment: step-counter;
             margin-bottom: 20px;
             padding: 20px;
-            background: #F5F5F5;
+            background: var(--bg-secondary);
             border-radius: 8px;
             position: relative;
         }
@@ -90,7 +111,7 @@
             left: -15px;
             top: 50%;
             transform: translateY(-50%);
-            background: #4CAF50;
+            background: var(--accent-green);
             color: white;
             width: 30px;
             height: 30px;
@@ -104,9 +125,24 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background: #333;
-            color: white;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: var(--accent-green-light);
         }
         @media (max-width: 600px) {
             .do-dont {
@@ -122,9 +158,10 @@
     <header>
         <h1>🌱 Composting Basics</h1>
         <p class="subtitle">Your Complete Beginner's Guide to Turning Waste into Garden Gold</p>
+        <a href="#start" class="cta-button">Start Composting</a>
     </header>
 
-    <section>
+    <section id="start">
         <h2>What is Composting?</h2>
         <p>Composting is nature's way of recycling organic materials into nutrient-rich soil amendment. Through the work of microorganisms, insects, and worms, kitchen scraps and yard waste transform into dark, crumbly compost that gardeners call "black gold." This natural process reduces waste sent to landfills while creating a valuable resource for your garden.</p>
     </section>
@@ -233,6 +270,7 @@
     <footer>
         <p>🌱 Start your composting journey today and turn waste into garden gold! 🌱</p>
         <p><em>Happy composting!</em></p>
+        <a href="#start" class="cta-button">Start Composting</a>
     </footer>
 </body>
 </html>
