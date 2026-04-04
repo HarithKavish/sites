@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | AITVA Nritya Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="temple-layout">
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">AITVA Nritya Academy</a>
+      <button class="menu-btn" data-menu-btn aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="about-academy.html">About Academy</a>
+        <a href="why-bharatanatyam.html">Why Bharatanatyam</a>
+        <a href="classes-training.html">Classes</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="about-guru.html">About Guru</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container reveal">
+        <h1>Gallery</h1>
+        <p>A glimpse into performances, practice, and artistic moments from the academy.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container reveal black-panel">
+        <h2>Videos</h2>
+        <div class="video-grid">
+          <article class="video-tile">
+            <video controls preload="metadata" poster="assets/images/rangapravesha-poster.jpeg">
+              <source src="assets/videos/varna-jathi.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container reveal black-panel">
+        <h2>Images</h2>
+        <div class="image-grid">
+          <img src="assets/images/avinya-performance.jpeg" alt="Avinya stage performance">
+          <img src="assets/images/temple-stage-performance.jpeg" alt="Temple stage Bharatanatyam performance">
+          <img src="assets/images/mangala-performance.jpeg" alt="Mangaluru stage performance">
+          <img src="assets/images/blue-costume-performance.jpeg" alt="Blue costume stage performance">
+          <img src="assets/images/korea-group-performance.jpeg" alt="Group performance in Korea festival">
+          <img src="assets/images/sri-lanka-performance.jpeg" alt="Sri Lanka performance">
+          <img src="assets/images/abhinaya-closeup.jpeg" alt="Abhinaya close up portrait">
+          <img src="assets/images/megha-portrait.jpeg" alt="Megha portrait">
+          <img src="assets/images/guru-duo-performance.jpeg" alt="Guru and student performance portrait">
+          <img src="assets/images/guru-stage-portrait.jpeg" alt="Guru stage portrait">
+          <img src="assets/images/solo-expression.jpeg" alt="Solo expression performance">
+          <img src="assets/images/rangapravesha-poster.jpeg" alt="Rangapravesha poster and stage moment">
+          <img src="assets/images/press-feature.jpg" alt="Press feature article">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Calgary, AB</div>
+  </footer>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <img class="lightbox-image" src="" alt="Full size image" id="lightbox-image">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">×</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+      <div class="lightbox-counter">
+        <span id="lightbox-current">1</span> / <span id="lightbox-total">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
