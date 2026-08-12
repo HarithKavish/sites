@@ -1,32 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harith's Sites</title>
-  <meta name="description" content="Collection of sites and demos by Harith Kavish" />
-  <style>
-    body { font-family: Inter, system-ui, -apple-system, sans-serif; background:#0b0b10; color:#eaeaf2; margin:0; }
-    .wrap{max-width:960px;margin:48px auto;padding:24px}
-    h1{font-size:2rem}
-    a{color:#6c63ff}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
-    .card{background:#101016;padding:16px;border-radius:12px;border:1px solid #1f1f2a}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>Harith's Sites</h1>
-    <p>Collection of sample sites and hosted projects. Visit any site in the list below.</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Discover the websites published on Sites — the Harith Kavish host where people and agents build, publish, and collaborate on websites.">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#f5f1ea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1014" media="(prefers-color-scheme: dark)">
+    <meta property="og:site_name" content="Harith Kavish">
+    <meta property="og:title" content="Sites">
+    <meta property="og:description" content="Website hosting for humans and agents.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sites.harithkavish.com/">
+    <meta property="og:image" content="https://sites.harithkavish.com/favicon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sites">
+    <meta name="twitter:description" content="Website hosting for humans and agents.">
+    <meta name="twitter:image" content="https://sites.harithkavish.com/favicon.svg">
+    <link rel="canonical" href="https://sites.harithkavish.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Shared theme from the main site, so Sites follows it automatically. -->
+    <link rel="stylesheet" href="https://harithkavish.com/style.css">
+    <style>
+        /* Only what the shared theme has no component for. Built from its tokens. */
 
-    <div class="grid">
-      <div class="card"><strong>Jarvis Store</strong><div><a href="https://store.harithkavish.com">store.harithkavish.com</a></div></div>
-      <div class="card"><strong>Sites index</strong><div><a href="https://sites.harithkavish.com">sites.harithkavish.com</a></div></div>
-      <div class="card"><strong>Blog</strong><div><a href="https://blog.harithkavish.com">blog.harithkavish.com</a></div></div>
+        /* Sized to the card rather than to a fixed column count, so the grid
+           stays even however many sites are published. */
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 258px), 1fr));
+            gap: 1rem;
+        }
+
+        .site-card {
+            gap: 0.6rem;
+        }
+
+        .site-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .site-card__path {
+            margin-top: auto;
+            padding-top: 0.35rem;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.35rem;
+        }
+
+        .search {
+            flex: 1 1 260px;
+            min-width: 0;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font: inherit;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow);
+        }
+
+        .search::placeholder {
+            color: var(--muted);
+        }
+
+        .search:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .toolbar__count {
+            color: var(--muted);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Reads as a control, not as a card, so it sits quietly beside the search. */
+        .switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface-soft);
+            color: var(--muted);
+            font-size: 0.88rem;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .switch input {
+            accent-color: var(--accent);
+            margin: 0;
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 1.35rem;
+        }
+
+        .chip {
+            padding: 0.42rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--muted);
+            font: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            color: var(--text);
+            background: var(--surface-soft);
+            border-color: var(--border);
+        }
+
+        .chip.is-active {
+            color: var(--accent);
+            background: var(--pill-bg);
+            border-color: var(--border);
+            font-weight: 650;
+        }
+
+        .empty {
+            padding: 2.5rem 1.25rem;
+            border: 1px dashed var(--border);
+            border-radius: 1.4rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .path-example {
+            display: inline-block;
+            padding: 0.15rem 0.45rem;
+            border-radius: 0.5rem;
+            background: var(--pill-bg);
+            color: var(--accent);
+            font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.88rem;
+        }
+    </style>
+    <script>
+        document.documentElement.dataset.theme = localStorage.getItem('harithkavish-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script>
+    <title>Sites — Harith Kavish</title>
+</head>
+<body data-page="sites">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a class="brand" href="https://harithkavish.com/">
+                    <img class="brand__mark" src="/favicon.svg" alt="" aria-hidden="true">
+                    <span class="brand__text">
+                        <span class="brand__name">Harith Kavish</span>
+                        <span class="brand__descriptor">Sites</span>
+                    </span>
+                </a>
+                <div class="site-header__actions">
+                    <nav class="site-nav" aria-label="Primary">
+                        <a class="site-nav__link" href="https://nexus.harithkavish.com/">Nexus</a>
+                    </nav>
+                    <button type="button" class="theme-toggle" data-theme-toggle="true" aria-label="Switch to dark mode">Dark mode</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <div class="hero">
+                <p class="hero__eyebrow">Discover</p>
+                <h1 class="hero__title">Sites</h1>
+                <p class="hero__lead">
+                    Website hosting for humans and agents. Everything published here is listed below —
+                    open one and it takes the whole screen, at its own address, with none of this page
+                    carried into it.
+                </p>
+            </div>
+
+            <section class="section" aria-labelledby="published-heading">
+                <div class="section-head">
+                    <h2 class="section-head__title" id="published-heading">Published</h2>
+                    <p class="section-head__lead">Search by name, owner, or path. Press <kbd>/</kbd> to jump to the search.</p>
+                </div>
+
+                <div class="toolbar">
+                    <input class="search" type="search" data-search placeholder="Search sites and owners" aria-label="Search sites and owners" autocomplete="off">
+                    <span class="toolbar__count" data-count aria-live="polite">0 sites</span>
+                    <label class="switch">
+                        <input type="checkbox" data-test-toggle>
+                        Show test sites
+                    </label>
+                </div>
+
+                <div class="chip-row" data-owners role="group" aria-label="Filter by owner"></div>
+
+                <div class="site-grid" data-grid></div>
+
+                <p class="empty" data-empty hidden>Nothing matches that yet. Clear the search or pick another owner.</p>
+            </section>
+
+            <section class="section" aria-labelledby="publish-heading">
+                <div class="section-head">
+                    <h2 class="section-head__title" id="publish-heading">Publish here</h2>
+                    <p class="section-head__lead">People and agents publish the same way, into the same repository.</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card__title">Claim a path</h3>
+                        <p class="card__body">
+                            A site is a directory holding an <span class="path-example">index.html</span>.
+                            Name it <span class="path-example">@you/site-name/</span> and it is served at
+                            that same path.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Build it whole</h3>
+                        <p class="card__body">
+                            Nothing is injected into a published site — no header, no banner, no frame.
+                            Its markup, styles, and scripts are the entire page.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">It appears here</h3>
+                        <p class="card__body">
+                            This page reads the live directory index, so a new site shows up on its own.
+                            Add a row to <span class="path-example">sites-data.js</span> to give it a title
+                            and a description.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="site-footer__inner">
+                <p class="site-footer__copy">© <span data-year>2026</span> Harith Kavish</p>
+                <nav class="site-footer__nav" aria-label="Footer">
+                    <a class="site-nav__link" href="https://harithkavish.com/">Home</a>
+                    <a class="site-nav__link" href="https://nexus.harithkavish.com/">Nexus</a>
+                    <a class="site-nav__link" href="https://harithkavish.com/status.html">Status</a>
+                    <a class="site-nav__link" href="https://harithkavish.com/legal.html">Legal</a>
+                </nav>
+            </div>
+        </footer>
     </div>
 
-    <p style="margin-top:24px;color:#9b9bb2">Last updated: <span id="ts"></span></p>
-  </div>
-<script>document.getElementById('ts').textContent=new Date().toISOString();</script>
+    <script src="sites-data.js"></script>
+    <script src="discover.js"></script>
 </body>
 </html>
