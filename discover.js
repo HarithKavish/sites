@@ -2,8 +2,8 @@
  * Discover — the only page this host renders itself.
  *
  * It lists what is published and then gets out of the way: every card is a
- * plain link to a directory, so the site it opens gets the whole viewport with
- * none of this page's chrome carried into it.
+ * plain link to a directory, opened in its own tab, so the site gets the whole
+ * window with none of this page's chrome carried into it.
  *
  * The listing starts from sites-data.js so the grid paints immediately, then
  * reconciles against the live repo tree so a site published since the last
@@ -152,6 +152,9 @@
         var link = document.createElement('a');
         link.className = 'card site-card';
         link.href = site.href;
+        // Its own tab, so a site keeps the whole window and discover stays put behind it.
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
 
         var topline = document.createElement('div');
         topline.className = 'card__topline';
