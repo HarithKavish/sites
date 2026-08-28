@@ -12,7 +12,6 @@
 (function () {
     'use strict';
 
-    var THEME_KEY = 'harithkavish-theme';
     var data = window.SITES_DATA || { sites: [] };
 
     /* Owners the end-to-end suite creates. Real work never lands under these. */
@@ -30,29 +29,6 @@
         owner: 'all',
         showTests: false
     };
-
-    /* ---- theme ---------------------------------------------------------- */
-
-    (function theme() {
-        var button = document.querySelector('[data-theme-toggle]');
-
-        function apply(next, persist) {
-            document.documentElement.dataset.theme = next;
-            if (persist) {
-                localStorage.setItem(THEME_KEY, next);
-            }
-            button.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
-            button.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-        }
-
-        apply(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light', false);
-
-        button.addEventListener('click', function () {
-            apply(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
-        });
-
-        document.querySelector('[data-year]').textContent = new Date().getFullYear();
-    })();
 
     /* ---- model ---------------------------------------------------------- */
 
